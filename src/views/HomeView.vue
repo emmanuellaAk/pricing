@@ -19,8 +19,9 @@ const models = ref([
   { id: '2', provider: 'openAI', model: 'gpt-4o-2024-11-20', input_per_million_token: 2.50, output_per_million_token: 10.00 },
   { id: '3', provider: 'anthropic', model: 'claude 3.5 Sonnet', input_per_million_token: 3.00, output_per_million_token: 15.00 },
   { id: '4', provider: 'anthropic', model: 'claude 3.5 Haiku', input_per_million_token: 1.50, output_per_million_token: 7.00 },
-  { id: '5', provider: 'cohere', model: 'Command-R+', input_per_million_token: 2.00, output_per_million_token: 9.00 },
-  { id: '6', provider: 'cohere', model: 'Command-R++', input_per_million_token: 2.20, output_per_million_token: 9.50 }
+  { id: "5",provider: "Gemini",model: "Gemini 1.5 Pro",input_per_million_token: 2.80,output_per_million_token: 11.00},
+{id: "6",provider: "Gemini",model: "Gemini 1.5 Flash",input_per_million_token: 1.20,output_per_million_token: 5.50}
+
 ])
 
 
@@ -66,7 +67,9 @@ const changePage = (page) => {
     <h1 class="text-3xl font-bold text-center mb-6 text-blue-500">AI Pricing</h1>
 
     <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+      <span>Input Tokens</span>
       <Input v-model="inputTokens" type="number" placeholder="Input Tokens" class="w-40" />
+      <span>Output Tokens</span>
       <Input v-model="outputTokens" type="number" placeholder="Output Tokens" class="w-40" />
       <Input v-model="searchQuery" type="text" placeholder="Search Model" class="w-60" />
 
